@@ -1,0 +1,25 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+import { SITE_TITLE, I18N_DEFAULT_LOCALE } from '@/constants/config';
+
+interface Props {
+  style?: string;
+}
+
+const { style } = Astro.props;
+const today = new Date();
+const getLocaleUrl = getRelativeLocaleUrl.bind(null, Astro.currentLocale || I18N_DEFAULT_LOCALE);
+---
+
+<footer style={style}>
+  &copy; {today.getFullYear()} <a href={getLocaleUrl('/')}>{SITE_TITLE}</a> 保留所有权利
+</footer>
+<style>
+  footer {
+    padding: 2em 1em 6em 1em;
+    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    color: rgb(var(--gray));
+    text-align: center;
+  }
+</style>

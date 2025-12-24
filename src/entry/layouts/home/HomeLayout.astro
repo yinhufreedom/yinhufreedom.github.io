@@ -1,0 +1,17 @@
+---
+import type { SupportedLocale } from '@/types';
+import { I18N_DEFAULT_LOCALE } from '@/constants/config';
+
+import DefaultLayout from '../default';
+
+import { resolveLocale } from './helper';
+import HeroSection from './HeroSection.astro';
+
+const locale = resolveLocale((Astro.currentLocale || I18N_DEFAULT_LOCALE) as SupportedLocale);
+---
+
+<DefaultLayout>
+  <article class="pb-14">
+    <HeroSection locale={locale} />
+  </article>
+</DefaultLayout>
