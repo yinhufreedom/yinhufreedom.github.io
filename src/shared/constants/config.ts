@@ -4,7 +4,7 @@
 import type { LocaleValue, LocaleConfig } from '../types';
 
 const SITE_TITLE = '银湖软件开发小组';
-const SITE_DESCRIPTION = '为富阳银湖在地超级个体/工作室、商家、企业提供专业服务的软件研发团队。';
+const SITE_DESCRIPTION = '为富阳银湖在地超级个体/工作室、商家/企业提供专业服务的软件研发团队。';
 
 const SITE_URL_MAP = {
   projects: '/projects',
