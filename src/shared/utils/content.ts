@@ -6,7 +6,7 @@ async function getCollection<K extends DataCollectionKey, E extends PickCollecti
   key: K,
   filter?: (entry: PickCollectionData<K>) => boolean,
 ): Promise<E[]> {
-  return (await getAstroCollection(key, filter ? (({ data }) => filter(data)) : undefined)).map(({ data }) => data)
+  return (await getAstroCollection(key, filter ? (({ data }) => filter(data)) : undefined)).map(({ data }) => data) as E[];
 }
 
 export { getCollection };
